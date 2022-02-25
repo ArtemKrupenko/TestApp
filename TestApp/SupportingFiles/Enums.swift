@@ -13,5 +13,4 @@ enum DataString {
     enum Identifier {
         static let cell = "cell"
     }
-
 }

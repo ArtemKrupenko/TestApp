@@ -1,12 +1,12 @@
 import UIKit
 
 // MARK: - Protocol
-protocol ProviderProtocol: AnyObject {
+protocol QuestionsAnswersProviderProtocol: AnyObject {
     func request(urlString: String, completion: @escaping ((Result<[SectionsFAQ], Error>)) -> Void)
 }
 
 // MARK: - Provider
-final class Provider: ProviderProtocol {
+final class QuestionsAnswersProvider: QuestionsAnswersProviderProtocol {
     
     public func request(urlString: String, completion: @escaping (Result<[SectionsFAQ], Error>) -> Void) {
         guard let url = URL(string: urlString) else { return }

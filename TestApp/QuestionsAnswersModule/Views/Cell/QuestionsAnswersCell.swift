@@ -1,6 +1,6 @@
 import UIKit
 
-final class TableViewCell: UITableViewCell {
+final class QuestionsAnswersCell: UITableViewCell {
     
     // MARK: - Properties
     private let containerView = UIView()
@@ -44,6 +44,16 @@ final class TableViewCell: UITableViewCell {
         super.init(coder: aDecoder)
     }
     
+    // MARK: - Overriden Functions
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        if isAnswerLabelHidden, selected {
+            showAnswerLabel()
+        } else {
+            hideAnswerLabel()
+        }
+    }
+    
     // MARK: - Internal Functions
     func update(questions: String, answers: String) {
         questionLabel.text = questions
@@ -59,15 +69,6 @@ final class TableViewCell: UITableViewCell {
     func hideAnswerLabel() {
         answerLabel.isHidden = true
         indicatorImageView.image = UIImage(named: DataString.downArrow)?.withRenderingMode(.alwaysTemplate)
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        if isAnswerLabelHidden, selected {
-            showAnswerLabel()
-        } else {
-            hideAnswerLabel()
-        }
     }
     
     // MARK: - Private Functions
@@ -98,8 +99,8 @@ final class TableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             indicatorImageView.heightAnchor.constraint(equalToConstant: 20),
             indicatorImageView.widthAnchor.constraint(equalToConstant: 20),
-            indicatorImageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -15),
-            indicatorImageView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10)
+            indicatorImageView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10),
+            indicatorImageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -15)
         ])
         questionLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

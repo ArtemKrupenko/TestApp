@@ -1,12 +1,12 @@
 import Foundation
 
 // MARK: - Model
-struct SectionsFAQ: Decodable {
+struct SectionsFAQ: Codable {
     public var name: String
     public var items: [DataFAQ]
 }
 
-struct DataFAQ: Decodable {
+struct DataFAQ: Codable {
     public var question: String
     public var answer: String?
 }

@@ -1,22 +1,22 @@
 import UIKit
 
 // MARK: - TableView
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension QuestionsAnswersViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         if isFiltering {
-            return filteredSectionsFAQ.count 
+            return filteredModels.count 
         } else {
-            return sectionsFAQ.count
+            return models.count
         }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = HeaderCellView()
         if isFiltering {
-            headerView.update(text: filteredSectionsFAQ[section].name)
+            headerView.update(text: filteredModels[section].name)
         } else {
-            headerView.update(text: sectionsFAQ[section].name)
+            headerView.update(text: models[section].name)
         }
         return headerView
     }
@@ -27,19 +27,19 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering {
-            return filteredSectionsFAQ[section].items.count
+            return filteredModels[section].items.count
         } else {
-            return sectionsFAQ[section].items.count
+            return models[section].items.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: DataString.Identifier.cell, for: indexPath) as? TableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: DataString.Identifier.cell, for: indexPath) as? QuestionsAnswersCell else { return UITableViewCell() }
         if isFiltering {
-            let item = filteredSectionsFAQ[indexPath.section].items[indexPath.row]
+            let item = filteredModels[indexPath.section].items[indexPath.row]
             cell.update(questions: item.question, answers: item.answer ?? "")
         } else {
-            let item = sectionsFAQ[indexPath.section].items[indexPath.row]
+            let item = models[indexPath.section].items[indexPath.row]
             cell.update(questions: item.question, answers: item.answer ?? "")
         }
         return cell
@@ -47,30 +47,30 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         UIView.animate(withDuration: 0.5) {
-            self.mainView.tableView.performBatchUpdates(nil)
+            self.customView.tableView.performBatchUpdates(nil)
         }
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        if let cell = self.mainView.tableView.cellForRow(at: indexPath) as? TableViewCell {
+        if let cell = self.customView.tableView.cellForRow(at: indexPath) as? QuestionsAnswersCell {
             cell.hideAnswerLabel()
         }
     }
 }
 
 // MARK: - SearchController
-extension ViewController: UISearchResultsUpdating, UISearchBarDelegate {
+extension QuestionsAnswersViewController: UISearchResultsUpdating, UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
     }
     
     func filterContentForSearchText(_ searchText: String) {
-        filteredSectionsFAQ = sectionsFAQ.map { name in
+        filteredModels = models.map { name in
             var newName = name
             newName.items = name.items.filter({$0.question.lowercased().contains(searchText.lowercased())})
             return newName
         }.filter({ !$0.items.isEmpty })
-        mainView.tableView.reloadData()
+        customView.tableView.reloadData()
     }
 }

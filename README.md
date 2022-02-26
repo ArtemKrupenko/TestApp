@@ -3,11 +3,11 @@
 ___
 ## Оглавление
 - **[Загрузка](#Download)**
-- **[Список вопросов/ответов](#List of questions/answers)**
-- **[Строка поиска](#Search Bar)**
-- **[Требования к коду](#Code requirements)**
-- **[Формат данных в JSON](#JSON data format)**
-- **[Требования к дизайну](#Design requirements)**
+- **[Список вопросов/ответов](#ListQuestionsAnswers)**
+- **[Строка поиска](#SearchBar)**
+- **[Требования к коду](#CodeRequirements)**
+- **[Формат данных в JSON](#JSONDataFormat)**
+- **[Требования к дизайну](#DesignRequirements)**
 - **[Презентация реализации](#Presentation)**
 ___
 ## <a id="Download"></a>Загрузка
@@ -15,38 +15,37 @@ ___
 - Список вопросов в формате JSON должен загружаться по url-адресу.
 - В случае ошибки загрузки должен появляться попап с текстом ошибки и кнопкой “Повторить”, по нажатию на которую начинается новая попытка загрузить данные.
 ___
-## <a id="List of questions/answers"></a>Список вопросов/ответов
+## <a id="ListQuestionsAnswers"></a>Список вопросов/ответов
 - По нажатию на текст вопроса он раскрывается с анимацией и показывает ответ.
 - По нажатию на уже раскрытый вопрос ответ скрывается с анимацией.
 - Справа от текста вопроса есть disclosure стрелка, которая должна показывать состояние скрыто/раскрыто (Направления стрелок не важны, но должны быть консистентны).
 ___
-## <a id="Search Bar"></a>Строка поиска
+## <a id="SearchBar"></a>Строка поиска
 - Стандартная строка поиска с кнопкой “Отмена”, скрытая при появлении экрана и выезжающая при скролле.
 - При активации строки поиска она должна "переезжать" на место навбара (Стандартное поведение для iOS).
 - При вводе текста в строку поиска на экране должны оставаться только те элементы, в тексте вопроса или ответа которых встречается введённая строка. Это должно происходить с какой-нибудь анимацией.
 - Заголовки разделов, в которых не осталось элементов после поиска должны скрываться.
 - По нажатию на кнопку “Отмена” введённый в строку поиска текст стирается, клавиатура стирается и строка поиска “переезжает” обратно под строку навигации (Стандартное поведение для iOS).
 ___
-## <a id="Code requirements"></a>Требования к коду
+## <a id="CodeRequirements"></a>Требования к коду
 - Swift или SwiftUI
 - Можно использовать самые последние версии языков, API и технологий, доступных на сегодня, включая Swift 5.5 и iOS 15.
 - Не должны использоваться third-party библиотеки.
 - На экранах не должно быть артефактов.
 - Анимация элементов должна быть плавной и без явных подёргиваний.
 ___
-## <a id="JSON data format"></a>Формат данных в JSON
+## <a id="JSONDataFormat"></a>Формат данных в JSON
 [{
 "name":string, "items":[{
 "question":string,
 "answer":string }]
 }]
 ___
-## <a id="Design requirements"></a>Требования к дизайну
+## <a id="DesignRequirements"></a>Требования к дизайну
 Особых требований к шрифтам, цветам и размерам нет
 ___
 ## <a id="Presentation"></a>Презентация реализации
-![Simulator Screen Shot - iPhone 13 Pro - 2022-02-26 at 18 15 03](https://user-images.githubusercontent.com/87443364/155848453-9a92eae7-3913-4f98-9209-a9a4095b657f.png)
-![Simulator Screen Shot - iPhone 13 Pro - 2022-02-26 at 18 14 40](https://user-images.githubusercontent.com/87443364/155848463-a115d8be-b13c-4fb1-b5a9-683d4927ea88.png)
-![Simulator Screen Shot - iPhone 13 Pro - 2022-02-26 at 18 12 49](https://user-images.githubusercontent.com/87443364/155848474-5ac7a0c0-9e17-4090-8ef2-3281336566f5.png)
-![Simulator Screen Shot - iPhone 13 Pro - 2022-02-26 at 18 13 49](https://user-images.githubusercontent.com/87443364/155848477-6789d5c0-bb2e-4c50-9997-b5d0247845eb.png)
-![Simulator Screen Shot - iPhone 13 Pro - 2022-02-26 at 18 14 14](https://user-images.githubusercontent.com/87443364/155848480-72e97ffc-4b90-4803-ae80-4ba6c2367075.png)
+![imgonline-com-ua-Resize-ASt9cyBfkrgt3y6V](https://user-images.githubusercontent.com/87443364/155848778-e8bfaef3-e02b-4938-97d3-d143b3e2a6e6.jpg)
+![imgonline-com-ua-Resize-GdtyqdEvnMu](https://user-images.githubusercontent.com/87443364/155848785-bd385e26-50a4-49a9-b0a2-44599ce86b6a.jpg)
+![imgonline-com-ua-Resize-X98dCa22MHwqer](https://user-images.githubusercontent.com/87443364/155848795-12ebe583-fbf1-4547-a2e7-26dc695563ec.jpg)
+![imgonline-com-ua-Resize-DuihG43IaVePbI](https://user-images.githubusercontent.com/87443364/155848851-98e167be-4a27-435e-9cbf-60553d1c088e.jpg)

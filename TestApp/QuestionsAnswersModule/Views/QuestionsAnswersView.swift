@@ -33,9 +33,6 @@ final class QuestionsAnswersView: UIView {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.activityIndicator.stopAnimating()
                 self.tableView.isHidden = false
-                // подумать как вынести! - нужно ли вообще это делать?
-//                self.navigationItem.searchController = self.searchController
-//                self.navigationItem.title = DataString.navigationTitle
             }
         }
     }

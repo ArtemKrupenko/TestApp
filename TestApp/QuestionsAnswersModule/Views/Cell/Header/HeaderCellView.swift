@@ -1,5 +1,11 @@
 import UIKit
 
+fileprivate extension Appearance {
+    var constantZero: CGFloat { 0 }
+    var constantTen: CGFloat { 10 }
+    var constantFifteen: CGFloat { 15 }
+}
+
 final class HeaderCellView: UIView {
     
     // MARK: - Properties
@@ -7,7 +13,7 @@ final class HeaderCellView: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 0
+        label.numberOfLines = Int(Appearance.instance.constantZero)
         return label
     }()
     
@@ -40,13 +46,12 @@ final class HeaderCellView: UIView {
             containerView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             containerView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
-        
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 0),
-            titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -15),
-            titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 15),
-            titleLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -10) 
+            titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: Appearance.instance.constantZero),
+            titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -Appearance.instance.constantFifteen),
+            titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: Appearance.instance.constantFifteen),
+            titleLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -Appearance.instance.constantTen)
         ])
     }
     

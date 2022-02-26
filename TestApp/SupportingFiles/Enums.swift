@@ -9,7 +9,8 @@ enum DataString {
     static let downArrow = "DownArrow"
     static let upArrow = "UpArrow"
     static let fatalError = "init(coder:) не был реализован"
-    
+    static let defaultConfiguration = "Default Configuration"
+
     enum Identifier {
         static let cell = "cell"
     }

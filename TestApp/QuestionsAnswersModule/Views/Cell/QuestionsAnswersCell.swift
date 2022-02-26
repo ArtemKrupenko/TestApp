@@ -1,5 +1,13 @@
 import UIKit
 
+fileprivate extension Appearance {
+    var constantZero: CGFloat { 0 }
+    var constantTen: CGFloat { 10 }
+    var constantFifteen: CGFloat { 15 }
+    var constantTwenty: CGFloat { 20 }
+    var constantThirty: CGFloat { 30 }
+}
+
 final class QuestionsAnswersCell: UITableViewCell {
     
     // MARK: - Properties
@@ -13,13 +21,13 @@ final class QuestionsAnswersCell: UITableViewCell {
     
     private let questionLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 0
+        label.numberOfLines = Int(Appearance.instance.constantZero)
         return label
     }()
     
     private let answerLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 0
+        label.numberOfLines = Int(Appearance.instance.constantZero)
         label.isHidden = true 
         return label
     }()
@@ -93,27 +101,27 @@ final class QuestionsAnswersCell: UITableViewCell {
             stackView.topAnchor.constraint(equalTo: containerView.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -10)
+            stackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -Appearance.instance.constantTen)
         ])
         indicatorImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            indicatorImageView.heightAnchor.constraint(equalToConstant: 20),
-            indicatorImageView.widthAnchor.constraint(equalToConstant: 20),
-            indicatorImageView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10),
-            indicatorImageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -15)
+            indicatorImageView.heightAnchor.constraint(equalToConstant: Appearance.instance.constantTwenty),
+            indicatorImageView.widthAnchor.constraint(equalToConstant: Appearance.instance.constantTwenty),
+            indicatorImageView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: Appearance.instance.constantTen),
+            indicatorImageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -Appearance.instance.constantFifteen)
         ])
         questionLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            questionLabel.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 10),
-            questionLabel.trailingAnchor.constraint(equalTo: indicatorImageView.leadingAnchor, constant: -10),
-            questionLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 15),
-            questionLabel.bottomAnchor.constraint(equalTo: answerLabel.topAnchor, constant: -20)
+            questionLabel.topAnchor.constraint(equalTo: stackView.topAnchor, constant: Appearance.instance.constantTen),
+            questionLabel.trailingAnchor.constraint(equalTo: indicatorImageView.leadingAnchor, constant: -Appearance.instance.constantTen),
+            questionLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: Appearance.instance.constantFifteen),
+            questionLabel.bottomAnchor.constraint(equalTo: answerLabel.topAnchor, constant: -Appearance.instance.constantTwenty)
         ])
         answerLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            answerLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 15),
-            answerLabel.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -30),
-            answerLabel.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: -20)
+            answerLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: Appearance.instance.constantFifteen),
+            answerLabel.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -Appearance.instance.constantThirty),
+            answerLabel.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: -Appearance.instance.constantTwenty)
         ])
     }
     

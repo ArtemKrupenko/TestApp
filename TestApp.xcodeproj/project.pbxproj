@@ -21,6 +21,7 @@
 		AC70795F27C290C400F76C6A /* QuestionsAnswersVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC70795E27C290C400F76C6A /* QuestionsAnswersVC+TableView.swift */; };
 		ACEF921127C9634F005C6815 /* QuestionsAnswersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEF921027C9634F005C6815 /* QuestionsAnswersPresenter.swift */; };
 		ACEF921327C96BAD005C6815 /* QuestionsAnswersBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEF921227C96BAD005C6815 /* QuestionsAnswersBuilder.swift */; };
+		ACEF921527CA735D005C6815 /* Apperance.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEF921427CA735D005C6815 /* Apperance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		AC70795E27C290C400F76C6A /* QuestionsAnswersVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionsAnswersVC+TableView.swift"; sourceTree = "<group>"; };
 		ACEF921027C9634F005C6815 /* QuestionsAnswersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsAnswersPresenter.swift; sourceTree = "<group>"; };
 		ACEF921227C96BAD005C6815 /* QuestionsAnswersBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsAnswersBuilder.swift; sourceTree = "<group>"; };
+		ACEF921427CA735D005C6815 /* Apperance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apperance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				AC70791527BFCE0800F76C6A /* Assets.xcassets */,
 				AC70795A27C256AF00F76C6A /* Enums.swift */,
+				ACEF921427CA735D005C6815 /* Apperance.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC70792627BFE35100F76C6A /* QuestionsAnswersProvider.swift in Sources */,
+				ACEF921527CA735D005C6815 /* Apperance.swift in Sources */,
 				4A75F91C27C3E224000A6C3E /* HeaderCellView.swift in Sources */,
 				AC70795B27C256AF00F76C6A /* Enums.swift in Sources */,
 				AC70791127BFCE0700F76C6A /* QuestionsAnswersViewController.swift in Sources */,
